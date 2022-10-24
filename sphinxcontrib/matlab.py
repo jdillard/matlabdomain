@@ -780,6 +780,7 @@ def setup(app):
     app.add_config_value('matlab_src_dir', None, 'env')
     app.add_config_value('matlab_src_encoding', None, 'env')
     app.add_config_value('matlab_keep_package_prefix', True, 'env')
+    app.add_config_value('matlab_parallel_read_safe', False, 'env')
 
     app.registry.add_documenter('mat:module', doc.MatModuleDocumenter)
     app.add_directive_to_domain('mat',
@@ -834,5 +835,5 @@ def setup(app):
     app.add_autodoc_attrgetter(doc.MatModule, doc.MatModule.getter)
     app.add_autodoc_attrgetter(doc.MatClass, doc.MatClass.getter)
 
-    return {'parallel_read_safe':False}
+    return {'parallel_read_safe': app.builder.matlab_parallel_read_safe}
     

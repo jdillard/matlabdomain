@@ -65,6 +65,11 @@ Additional Configuration
    still referred to in ReST using ``+pakage.+subpkg.func`` but the output
    will be ``pakage.other.func()``.
 
+``matlab_parallel_read_safe``
+  Toggles whether to allow reading to be done in parallel or serial mode. The
+  defualt is ``False``, making only serial reads possible. Note that parallel
+  reads are experimental at this time and feedback is appreciated. 
+
 For convenience the `primary domain <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-primary_domain>`_
 can be set to ``mat``.
 
